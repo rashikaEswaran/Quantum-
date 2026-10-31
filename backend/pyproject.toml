@@ -1,0 +1,23 @@
+[project]
+name = "quantumtrace-backend"
+version = "1.0.0"
+description = "QuantumTrace AI: Quantum software debugging, digital twin, and counterfactual investigation engine"
+authors = [{ name = "QuantumTrace AI Team" }]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "sqlalchemy",
+    "qiskit",
+    "qiskit-aer",
+    "qiskit-ibm-runtime",
+    "numpy",
+    "scipy",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
