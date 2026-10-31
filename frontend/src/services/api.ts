@@ -11,7 +11,10 @@ import {
   HardwareBackend
 } from '../types';
 
-const API_BASE = '/api/v1';
+const customApiUrl = (import.meta as any)?.env?.VITE_API_URL;
+const API_BASE = customApiUrl
+  ? `${customApiUrl.replace(/\/+$/, '')}/api/v1`
+  : '/api/v1';
 
 export const api = {
   async getHealth() {
